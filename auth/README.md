@@ -112,7 +112,7 @@ This is the Auth Microservice for Ticketing application built with React, Node, 
     })
 ```
 
-```json
+```typescript
 
     /**
      * ticketing-app/package.json
