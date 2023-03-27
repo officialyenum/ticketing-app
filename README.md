@@ -56,7 +56,7 @@ This is a Microservice for Ticketing application built with React, Node, Docker 
     - stripeRefundId : string
 
 ### Services
-- Auth - [Auth Micro App](https://github.com/officialyenum/ticketing-app/auth/#README.md) : 
+- [Auth Micro App](https://github.com/officialyenum/ticketing-app/tree/main/auth#readme) : 
     -   Everything Relating to user signup/signin/signout
 - Tickets : 
     -   Ticket Creation/Editing. 
