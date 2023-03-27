@@ -1,4 +1,4 @@
-# Ticketing App
+# Ticketing Auth App
 
 This is the Auth Microservice for Ticketing application built with React, Node, Docker and Kubernetes
 
@@ -44,7 +44,6 @@ This is the Auth Microservice for Ticketing application built with React, Node, 
 ### Services
 - Auth : 
     -   Everything Relating to user signup/signin/signout
-
 
 ### Events
 
@@ -163,7 +162,7 @@ Ticketing Micro Auth App is an MIT-licensed open source project. If you'd like t
 
 ### License
 
-Ticketing Micro Auth App is [MIT licensed](LICENSE).
+Ticketing Micro Auth App is [MIT licensed](https://github.com/officialyenum/ticketing-app/blob/main/LICENSE).
 
 
 ### Documentation

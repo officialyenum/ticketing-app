@@ -127,7 +127,7 @@ Ticketing App is an MIT-licensed open source project. If you'd like to support p
 
 ### License
 
-Ticketing App is [MIT licensed](LICENSE).
+Ticketing App is [MIT licensed](https://github.com/officialyenum/ticketing-app/blob/main/LICENSE).
 
 
 ### Documentation
