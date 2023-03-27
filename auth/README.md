@@ -70,8 +70,9 @@ This is the Auth Microservice for Ticketing application built with React, Node, 
 
 ### Application Creation
 - Auth :
+
 ```bash
-    # mk auth directory
+    # make auth directory
     mkdir auth
 
     # call auth directory
@@ -95,6 +96,11 @@ This is the Auth Microservice for Ticketing application built with React, Node, 
 ```
 
 ```typescript
+
+    /**
+     * ticketing-app/auth/src/index.ts
+     */
+
     import express from "express";
     import { json } from "body-parser";
 
@@ -107,6 +113,10 @@ This is the Auth Microservice for Ticketing application built with React, Node, 
 ```
 
 ```json
+
+    /**
+     * ticketing-app/package.json
+     */
     {
         ...
         "scripts": {
