@@ -126,10 +126,6 @@ This is the Auth Microservice for Ticketing application built with React, Node, 
     }
 ```
 
-```bash
-    
-```
-
 ### Running the app
 
 ```bash
