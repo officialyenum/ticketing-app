@@ -1,6 +1,6 @@
 # Ticketing App
 
-This is a Microservice for Ticketing application built with React, Node, Docker and Kubernetes
+This is the Auth Microservice for Ticketing application built with React, Node, Docker and Kubernetes
 
 ## Table of Contents
 
@@ -10,6 +10,8 @@ This is a Microservice for Ticketing application built with React, Node, Docker 
     -   [Resources](#resources)
     -   [Services](#services)
     -   [Events](#events)
+    -   [Routs](#routes)
+    -   [Application Creation](#application-creation)
     -   [Running the app](#running-the-app)
     -   [Testing](#testing)
     -   [Usage](#usage)
@@ -38,37 +40,10 @@ This is a Microservice for Ticketing application built with React, Node, Docker 
 - USERS
     - email : string
     - password : string
-- TICKET
-    - title : string
-    - price : number
-    - userId : Ref to user resource
-    - orderId : Ref to order resource
-- ORDER
-    - userId : Ref to the user resource
-    - status :  Enum "Created"|"Cancelled"|"Awaiting Payment"|"Completed"|
-    - ticketId : Ref to the ticket resource
-    - expiresAt : Date
-- CHARGE
-    - orderId : Ref to Order resource
-    - status : Enum "Created"|"Failed"|"Completed"|
-    - amount : number
-    - stripeId : string
-    - stripeRefundId : string
 
 ### Services
-- Auth - [Auth Micro App](https://github.com/officialyenum/ticketing-app/auth/#README.md) : 
+- Auth : 
     -   Everything Relating to user signup/signin/signout
-- Tickets : 
-    -   Ticket Creation/Editing. 
-    -   Knows whether a ticket can  be updated
-- Orders : Order Creation/Editing.
-- Expirations : 
-    -   Watches For Orders to be created, 
-    -   Cancels them after 15 minutes
-- Payments : 
-    -   Handles Credit Card Payments
-    -   Cancels Orders if payments fails, 
-    -   Completes if payment succeeds
 
 
 ### Events
@@ -76,23 +51,84 @@ This is a Microservice for Ticketing application built with React, Node, Docker 
 - User :
   - UserCreated
   - UserUpdated
-- Order :
-  - OrderCreated
-  - OrderCancelled
-  - OrderExpired
-- Ticket :
-  - TicketCreated
-  - TicketUpdated
-- Charge :
-  - ChargeCreated
 
+
+### Routes
+
+- Auth :
+  - POST - /api/users/signup  
+    - Body: {email:string, password:string}
+    - Purpose: Sign up for an account
+  - POST - /api/users/signin
+    - Body: {email:string, password:string}
+    - Purpose: Sign in to an existing account
+  - POST - /api/users/signout
+    - Body: {}
+    - Purpose: Sign Out
+  - GET - /api/users/currentuser 
+    - Body: 
+    - Purpose: Return user information
+
+### Application Creation
+- Auth :
+```bash
+    # mk auth directory
+    mkdir auth
+
+    # call auth directory
+    cd auth
+
+    # initialize node auth app
+    npm init -y 
+
+    # install node dependencies
+    npm install typescript ts-node-dev express @types/express
+
+    #create tsconfig file
+    tsc --init
+
+    mkdir src
+
+    cd src
+
+    touch index.ts
+
+```
+
+```typescript
+    import express from "express";
+    import { json } from "body-parser";
+
+    const app = express();
+    app.use(json());
+
+    app.listen(3000, () => {
+        console.log("Listening on port 3000");
+    })
+```
+
+```json
+    {
+        ...
+        "scripts": {
+            "start": "ts-node-dev src/index.ts"
+        },
+        ...
+    }
+```
+
+```bash
+    
+```
 
 ### Running the app
 
 ```bash
-# install Docker, Kubernetes and Skaffold on your machine
-# skaffold app
-$ skaffold dev 
+# install packages
+$ npm install 
+
+# install packages
+$ npm start 
 
 ```
 
@@ -113,7 +149,7 @@ This is the basic flow of the application.
 
 ### Support
 
-Ticketing App is an MIT-licensed open source project. If you'd like to support please : <p><a href="https://www.buymeacoffee.com/yenum"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="yenum" /></a></p>
+Ticketing Micro Auth App is an MIT-licensed open source project. If you'd like to support please : <p><a href="https://www.buymeacoffee.com/yenum"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="yenum" /></a></p>
 <br>
 <br>
 
@@ -127,7 +163,7 @@ Ticketing App is an MIT-licensed open source project. If you'd like to support p
 
 ### License
 
-Ticketing App is [MIT licensed](LICENSE).
+Ticketing Micro Auth App is [MIT licensed](LICENSE).
 
 
 ### Documentation
