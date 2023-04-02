@@ -24,6 +24,7 @@ This is a Microservice for Ticketing application built with React, Node, Docker 
 -   [React](https://react.dev)React is a free and open-source front-end JavaScript library for building user interfaces based on components.
 -   [Docker](https://docker.com) Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers.
 -   [Kubernetes](https://kubernetes.io/) Kubernetes, also known as K8s, is an open-source system for automating deployment, scaling, and management of containerized applications.
+-   [Skaffold] (https://skaffold.dev/docs/getting-started/) A tool that facilitates continuous development for Kubernetes applications.
 
 ## Getting Started
 
@@ -91,8 +92,11 @@ This is a Microservice for Ticketing application built with React, Node, Docker 
 
 ```bash
 # install Docker, Kubernetes and Skaffold on your machine
+
 # skaffold app
-$ skaffold dev 
+$   brew install skaffold
+# navigeate to your application and run 
+$   skaffold dev 
 
 ```
 
@@ -100,7 +104,7 @@ $ skaffold dev
 
 ```bash
 # run tests
-$ npm test
+$   npm test
 
 
 ```
