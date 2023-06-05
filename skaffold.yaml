@@ -15,5 +15,13 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: '.'
+    - image: officialyenum/ticketing-app-client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '**/*.js'
+            dest: '.'
             
   
