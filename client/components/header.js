@@ -8,7 +8,7 @@ const Header = ({ currentUser}) => {
     ].filter(linkConfig => linkConfig)
     .map(({ label, href}) => {
         return (
-            <li key={href} className='nav-item'>
+            <li key={href} className='nav-item px-2'>
                 <Link className='nav-link' href={href}>
                     {label}
                 </Link>
@@ -21,6 +21,7 @@ const Header = ({ currentUser}) => {
     }
     return (
         <nav className="navbar navbar-light bg-light">
+            
             <Link className="navbar-brand" href="/">
                 Ye Tix
             </Link>
